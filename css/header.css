@@ -8,8 +8,8 @@
     background: linear-gradient(90.09deg, #3800AF 0%, #BF7204 97.52%, #C27500 100%, #C27500 100%);
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 24px;
+    justify-content: center;
 }
 
 .nav__top-icon {
@@ -18,10 +18,11 @@
 }
 
 .nav__top-p {
-    font-family: 'CR', sans-serif;
+    font-family: var(--CR);
     font-size: 16px;
     font-weight: 400;
     line-height: 18px;
+    color: var(--white);
     max-width: 166px;
     width: 100%;
 }
@@ -35,61 +36,85 @@
 
 .navbar__wrap {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     gap: 5px;
     font-family: var(--CB);
     font-size: 18px;
     font-weight: 700;
-    line-height: 20px;
-    letter-spacing: 0em;
-    text-align: left;
-  text-transform: uppercase;
-  
+    line-height: 15px;
+    color: var(--white);
+    text-transform: uppercase;
 }
-.logo__img{
-  width: 103px;
-  height: 42px;
+
+.logo__img {
+    width: 103px;
+    height: 42px;
 }
-.navbar__list{
+
+.navbar__list {
     display: flex;
     align-items: center;
     gap: 30px;
 }
-.navbar__list-item{
-padding: 42px 0;
 
+.navbar__list-item {
+    padding: 42px 0;
 }
-.navbar__list-item-link{
-    position: relative;
+
+.navbar__list-item-link {
     font-family: var(--MR);
     font-size: 14px;
     font-weight: 400;
     line-height: 17px;
     color: var(--white);
     transition: 0.3s;
+    position: relative;
 }
-.navbar__list-item-link:hover{
+
+.navbar__list-item-link:hover {
     color: var(--or);
 }
-.navbar__list-item-link::after{
+
+.navbar__list-item-link::after {
     content: '';
     position: absolute;
     width: 0%;
     height: 3px;
-    background:  var(--or);
+    background: var(--or);
     left: 50%;
     bottom: -42px;
-    border-radius: 15px 15px 0 0 ;
-    transform: translateX(-50%);
+    border-radius: 15px 15px 0 0;
     transition: 0.3s;
+    transform: translateX(-50%);
 }
-.navbar__list-item-link:hover::after{
+
+.navbar__list-item-link:hover::after {
     width: 100%;
- 
+}
+
+@media screen and (max-width:768px) {
+    .navbar__wrap {
+        flex-direction: column;
+        padding-top: 20px;
+    }
+
+    .navbar__list-item {
+        padding: 20px 0;
+    }
+
+    .navbar__list-item-link::after {
+        bottom: -20px;
+    }
+}
+
+@media screen and (max-width:360px) {
+    .navbar__list {
+        gap: 15px;
+    }
 }
